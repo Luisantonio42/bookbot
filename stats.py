@@ -34,3 +34,29 @@ def count_characters_from_text(book):
             chars_dict[lower_char] += 1
 
     return chars_dict
+
+
+test_dict = {"t": 29493, "h": 19176, "e": 44538, " ": 70480, "p": 5952}
+
+
+def sort_on(items):
+    return items["num"]
+
+
+def sort_chars_dictionary(chars_dictionary):
+    # print(chars_dictionary)
+    ordered_dicts = []
+    for char in chars_dictionary:
+        char_dict = {}
+        char_count = chars_dictionary[char]
+
+        char_dict["char"] = char
+        char_dict["num"] = char_count
+
+        ordered_dicts.append(char_dict)
+
+    ordered_dicts.sort(reverse=True, key=sort_on)
+    return ordered_dicts
+
+
+# print(sort_chars_dictionary(test_dict))
