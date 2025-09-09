@@ -17,15 +17,20 @@ def count_words_from_text(book):
 
 
 def count_characters_from_text(book):
+    # transform book to text
     text = get_book_text(book)
     chars_dict = {}
-    # text_list = []
+
+    # Reads every character from string
     for char in text:
-        char.lower()
-        if char not in chars_dict:
-            chars_dict[char] = 1
-        # text_list.append(char.lower())
+        lower_char = char.lower()
+
+        # If char not in dic add it
+        if lower_char not in chars_dict:
+            chars_dict[lower_char] = 1
+
+        # else, increase count
         else:
-            chars_dict[char] += 1
-    # print(chars_dict)
+            chars_dict[lower_char] += 1
+
     return chars_dict
