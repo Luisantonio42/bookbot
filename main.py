@@ -1,19 +1,18 @@
-from stats import count_words_from_text
+from stats import *
 
-def get_book_text(path_to_file):
-    with open(path_to_file) as f:
-        # f is a file object
-        file_contents = f.read()
-    return file_contents
+f_file = "/Users/luisgarcia/Documents/Projects/coding_exercises/backend_dev/c4_bookbot/bookbot/books/frankenstein.txt"
+
+f_s_file = "/Users/luisgarcia/Documents/Projects/coding_exercises/backend_dev/c4_bookbot/bookbot/books/frank_substract.txt"
+
 
 def main():
-    words = count_words_from_text(
-        get_book_text(
-            "/Users/luisgarcia/Documents/Projects/coding_exercises/backend_dev/c4_bookbot/bookbot/books/frankenstein.txt"
-        )
-    )
-    
-    print(words)
+    words = count_words_from_text(f_file)
+
+    print(f"{words} words found in the document!")
+
+    chars_from_text = count_characters_from_text(f_s_file)
+
+    print(chars_from_text)
 
 
 main()
